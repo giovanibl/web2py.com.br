@@ -81,7 +81,10 @@ pre {
 	position:relative;
 	width:982px;
 	height:130px;
-	margin:0px auto 0px auto;
+	margin: 0px;
+    margin-right: auto;
+    margin-left: auto;
+    padding-top: 33px;
 	}
 
 .boxLogin{
@@ -90,16 +93,24 @@ pre {
 	}
 	
 .logo{
-	position:absolute;	
+/*	position:absolute;	
 	background-image:url(../img/web2py_logo.png);
 	background-position:16px  2px 0px 0px;
-	background-repeat:no-repeat;
+	background-repeat:no-repeat;*/
 	width:230px;
 	height:50px;
-	top:33px;
-	left:45px;
+/*	top:33px;
+	left:45px;*/
+    float: left;
 	}
-	
+
+a.logo img   {
+    border: 0px;
+}	
+
+a.logo {
+    outline: none;
+}
  
 /*****************************  MAIN CONTENT ********************************/
 .content {
