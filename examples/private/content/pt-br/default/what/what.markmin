@@ -1,9 +1,9 @@
-## What is web2py``TM``:sup
+## O que é web2py``TM``:sup ?
 
 ---------------
-The best way to understand web2py is to try it.
-You can try it online [[here http://www.web2py.com/demo_admin]]
-This online version is identical to the actual web2py although some functions are disabled for security reasons.
+A melhor maneira de usar o web2py, é experimentá-lo.
+Você pode usar ele online [[aqui http://www.web2py.com/demo_admin]]
+Esta é a versão idêntica do atual web2py, embora que algumas funções estão desativadas por segurança.
 ---------------
 
 web2py was inspired by Ruby on Rails and, as Rails, it focuses on rapid development and follows a Model View Controller design. web2py differs from Rails because it is based on Python (thus it is faster and more scalable), because it provides a comprehensive web-based administrative interface (thus there is no need to ever type shell commands unless you wish), includes libraries to handle more protocols (for example XML-RPC and RSS feeds), and can run on the Google App Engine.
