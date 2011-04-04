@@ -44,20 +44,16 @@ rue;
       <!-- HEADER -->
       <div class="headerExt">
 	<div class="headerInt">
-	  <a href="{{=URL('default','index')}}" class="logo"><em style="display:none;">web2py Enterprise web framework</em></a>
+	  <a href="{{=URL('default','index')}}" class="logo" alt="web2py Enterprise web framework"><img src={{=URL('static','img/web2py_logo.png')}} /></a>
 	  <div class="headermenu">
-            <a href="{{=URL('default','index')}}"
-	       class="home"><em style="display:none;">{{=T('Home')}}</em></a> 
-            <a href="{{=URL('default','what')}}"  
-	       class="about what"><em style="display:none;">{{=T('About')}}</em></a> 
-            <a href="{{=URL('default','download')}}"  
-	       class="download"><em style="display:none;">{{=T('Download')}}</em></a>
-            <a href="{{=URL('default','who')}}"
-	       class="staff who"><em style="display:none;">{{=T('Staff')}}</em></a> 
-            <a href="{{=URL('default','support')}}"
-	       class="support"><em style="display:none;">{{=T('Support')}}</em></a> 
-            <a href="{{=URL('default','documentation')}}"
-	       class="documentation"><em style="display:none;">{{=T('Documentation')}}</em></a> 
+            <ul>
+                <li class="first"><a href="{{=URL('default','index')}}">{{=T('Home')}}</a></li>
+                <li><a href="{{=URL('default','what')}}">{{=T('About')}}</a></li>
+                <li><a href="{{=URL('default','download')}}">{{=T('Download')}}</a></li>
+                <li><a href="{{=URL('default','who')}}">{{=T('Staff')}}</a></li>
+                <li><a href="{{=URL('default','support')}}">{{=T('Support')}}</a></li>
+                <li class="last"><a href="{{=URL('default','documentation')}}">{{=T('Documentation')}}</a></li>
+            </ul>
 	  </div>
 	</div>
       </div>
@@ -76,7 +72,7 @@ rue;
 		  {{=T('Download')}}    
 	      </span>
 	      <span id="textBtDownload2">
-		{{=T('Latest Stable ')}}{{=request.env.web2py_version[:15]}}
+		{{=T('Latest Stable')}}{{=request.env.web2py_version[7:15]}}
 	      </span>
 	    </a>
 	  </div>     
