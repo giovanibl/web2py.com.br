@@ -65,17 +65,15 @@ rue;
 	
 	{{block sidebar}}
 	<div class="contentright">   
-          <div class="boxBtDownload">
-	    <a href="{{=URL('default','download')}}"  class="btDownload btDownloadPosicao1">
-	      <div class="boxBtDownloadICO"></div>
-      	      <span id="textBtDownload1">
-		  {{=T('Download')}}    
-	      </span>
-	      <span id="textBtDownload2">
-		{{=T('Latest Stable')}}{{=request.env.web2py_version[7:15]}}
-	      </span>
-	    </a>
-	  </div>     
+      <div class="boxBtDownload">
+	        <a href="{{=URL('default','download')}}"  class="btDownload btDownloadPosicao1">
+              <div class="boxBtDownloadICO"></div>
+      	      <span id="textBtDownload1">{{=T('Download')}}</span>
+      	      <span id="textBtDownload2">
+              		{{=T('Latest Stable')}} {{=get_last_version()['version']}}
+          	      </span>
+    	    </a>
+	    </div>     
 	  
           <!-- div class="boxSearch1">
 	       <div class="boxSearch2"></div>
