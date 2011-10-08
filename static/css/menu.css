@@ -1,0 +1,74 @@
+/*********** MENU COMPLETO **********/
+.headermenu{
+    font-size: small;
+    margin-top: 9px;
+    margin-left: 286px;
+    width:666px;
+    border: 1px solid #3a4e4c;
+    -moz-border-radius: 5px;    
+    border-radius: 5px;
+    background-color: #c6d2d0;
+}	 
+
+.headermenu ul {
+    height: 29px;
+	list-style:	none;
+}
+
+.headermenu > ul > li {
+    height: 15px;
+    float: left;
+    border-right: 1px solid #9bacaa;
+    margin: 0px;
+    padding: 7px;
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 90px;
+    background-color: #c6d2d0;
+    text-align: center;
+}
+
+.headermenu li.last {
+    border-right: 0px;
+}
+
+.headermenu a {
+    outline: none;
+    color: #3a4e4c;
+    font-weight: bold;
+}	 
+
+.headermenu li a, .headermenu li:hover, .headermenu li a:hover {
+   text-decoration:none;
+   text-shadow: none;
+}
+
+.headermenu li:hover a {
+    color: #ffffff;
+}
+
+.headermenu li:hover{
+    background-color: #889d9b;
+}
+
+.headermenu li:hover {
+    border-right: 1px solid #889d9b;
+}
+
+.headermenu li.first {
+    border-top-left-radius: 5px;
+    -moz-border-radius-topleft: 5px;
+    border-bottom-left-radius: 5px;
+    -moz-border-radius-bottomleft: 5px;
+}
+
+.headermenu li.last {
+    border-top-right-radius: 5px;
+    -moz-border-radius-topright: 5px;
+    border-bottom-right-radius: 5px;
+    -moz-border-radius-bottomright: 5px;
+}
+
+/*************** FIM DO MENU COMPLETO **********************/
+		
+		

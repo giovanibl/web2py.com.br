@@ -1,0 +1,68 @@
+## O que é web2py``TM``:sup ?
+
+---------------
+A melhor maneira de usar o web2py, é experimentá-lo.
+Você pode usar ele online [[aqui http://www.web2py.com/demo_admin]]
+Esta é a versão idêntica do atual web2py, embora que algumas funções estão desativadas por segurança.
+---------------
+web2py foi inspirado de Ruby on Rails e, como Rails, ele foca no desenvolvimento ágil e segue o modelo MVC. webp2y difere de Rails porque ele é baseado em Python (assim ele é rápido e mais escalável), porque ele provêm uma interface web administrativa abrangente (com isso não há necessidade de digitar comandos no shell, caso você não queira), incluindo bibliotecas para manipular vários protocolos (por exemplo XML-RPC e feeds RSS), e pode ser executado no Google App Engine.
+
+web2py foi inspirado também de Django e, como Django, ele tem a capacidade de gerar formulários a partir das tabelas do banco de dados e inclui um amplo conjunto de validadores. Mas o web2py difere de Django, porque ele é mais compacto, fácil de aprender e não possui arquivos de configuração a nível de projeto.
+
+web2py tem menos escrita que os framworks baseados em Java e sua sintace é muito limpo comparando com os frameworks em PHP. Isso faz com que as aplicações sejam simples para desenvolver, e fácil para ler e mantê-los.
+---------------
+[[Aqui http://www.web2py.com/examples/static/web2py_vs_others.pdf]] compara as características do web2py com outros frameworks web populares.
+---------------
+
+O web2py tem com código fonte (para qualquer Sistema Operacionail , desde que Python esteja instalado e executando) e versões para OSX e Windows. web2py não necessita de instalação. Você precisa descompactá-lo, acessar a pasta, clique sobre o web2py.py (ou web2py.exe no Windows e web2py.app no OSX) e escolher a senha para o administrador. Ele vai abrir o navegador web para você e ir direto à interface administrativa. Tudo o que precisa para fazer isso acontecer (o interpretador Python, o web server, o banco relacional, etc) já está no empacotado com o web2py. Se você precisar de mais energia para suas aplicações, você pode usar o seu web-server preferido (por exemplo, o Apache) e seu banco de dados preferido (por exemplo PostgreSQL ou Oracle).
+
+Via the admin interface you can upload a packed application, create a new application, design an application, maintain an existing application, bytecode-compile an application, pack and download an application. Everything can be done via the web-based admin interface, including editing the files that comprise your applications, clearing temp files, browsing past tickets/errors, run tests, interact with the database. If you so choose, it is also possible to interact with web2py via the Operating System shell or the Python shell.
+
+Qualquer aplicação web2py é composta de Models (arquivos que representa o modelo dos seus dados), Views (arquivos que contêm a apresentação dos seus dados), Controllers (arquivos que possui a lógica de negócio e os fluxos de trabalho), Cron Jobs (tarefas que necessita ser executadas regularmente em segundo plano), Módulos (coleções reutilizáveis de classes e funções), e Arquivos Estáticos (imagens, scripts, folhas de estilo, etc.).
+
+Controllers consiste de funções que são associadas pela URL e são chamadas quando a URL associada é invocada. Models são executados antes da função ser chamada, independentemente de acessar a URL (para cada app). Views são chamados quando a função retuna outros dados que não seja uma string, e renderiza os dados em formato adequado (por exemplo *.html).
+
+#### Uma aplicação web2py pode ser tão simples com um único arquivo (controllers/default.py) contendo:
+
+
+``
+def index(): return "Hello World"',counter=None,_class='boxCode')
+``:python
+
+
+Quando **http://localhost:8000/app/default/index**é visitado, a função é chamada e ele exibe a mensagem "Hello World".
+
+
+#### Aqui já é uma aplicação mais complexa, que permite o visitado efetuar o upload de imagens dentro do banco de dados:
+
+
+``
+# no Model
+db=DAL('sqlite://storage.db')
+db.define_table('image', 
+                Field('name'),
+                Field('file','upload'))
+``:python
+
+
+``
+# no Controller
+def index():
+    form = SQLFORM(db.image)
+    if form.accepts(request.vars, session):
+        response.flash = 'image uploaded'
+    return dict(form = form)
+``:python
+
+``
+# na View
+{{extend 'layout.html'}}
+<h1>Image upload form</h1>
+{{= form}}
+``:python
+
+Efetuando o upload das imagens. são renomados por segurança para evitar vulnerabilidades, armazenado no sistema de arquivos (ou banco de dados) e adicionando uma entrada correspondente ao banco de dados, associando ao arquivo. Um mecanismo embutido prevêm um envio repetido de dados no envio do formulário. Todas as o transações I/O do banco de dados é seguro por padrão. Qualquer exceção no código faz com que efetue um rollback na transação atual.
+
+---------------
+Mais exemplos sobre aplicações mais complexas, pode ser encontrado [[aqui http://web2py.com/examples/default/examples]]
+---------------
