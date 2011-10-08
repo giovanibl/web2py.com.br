@@ -6,6 +6,7 @@ markmin_dict = dict(template=lambda \
                         code:'<sup style="font-size:0.5em;">%s</sup>'%code,
                     br=lambda n:'<br>'*int(n),
                     groupdates=lambda group:group_feed_reader(group),
+                    python = lambda text: CODE(text,language='python').xml()
                     )
 
 def get_content(b=None,\
