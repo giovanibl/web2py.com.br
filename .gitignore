@@ -2,10 +2,10 @@
 *.pyc
 *.bak
 *.1
-/examples/databases
-/examples/cache
-/examples/errors
-/examples/sessions
+databases
+cache
+errors
+sessions
 .project
 .pydevproject
 .hg
